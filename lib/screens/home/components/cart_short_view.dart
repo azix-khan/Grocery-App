@@ -1,13 +1,13 @@
-import 'package:animation_2/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../../controllers/home_controller.dart';
 
 class CardShortView extends StatelessWidget {
   const CardShortView({
-    Key? key,
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final HomeController controller;
 
@@ -17,7 +17,7 @@ class CardShortView extends StatelessWidget {
       children: [
         Text(
           "Cart",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(width: defaultPadding),
         Expanded(
@@ -45,7 +45,8 @@ class CardShortView extends StatelessWidget {
           backgroundColor: Colors.white,
           child: Text(
             controller.totalCartItems().toString(),
-            style: TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, color: primaryColor),
           ),
         )
       ],

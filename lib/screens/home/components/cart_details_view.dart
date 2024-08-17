@@ -1,11 +1,11 @@
-import 'package:animation_2/constants.dart';
-import 'package:animation_2/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+import '../../../controllers/home_controller.dart';
 import 'cart_detailsview_card.dart';
 
 class CartDetailsView extends StatelessWidget {
-  const CartDetailsView({Key? key, required this.controller}) : super(key: key);
+  const CartDetailsView({super.key, required this.controller});
 
   final HomeController controller;
 
@@ -15,17 +15,17 @@ class CartDetailsView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Cart", style: Theme.of(context).textTheme.headline6),
+          Text("Cart", style: Theme.of(context).textTheme.titleLarge),
           ...List.generate(
             controller.cart.length,
             (index) => CartDetailsViewCard(productItem: controller.cart[index]),
           ),
-          SizedBox(height: defaultPadding),
+          const SizedBox(height: defaultPadding),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text("Next - \$30"),
+              child: const Text("Next - \$30"),
             ),
           )
         ],

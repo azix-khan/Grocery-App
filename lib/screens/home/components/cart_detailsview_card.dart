@@ -1,14 +1,14 @@
-import 'package:animation_2/components/price.dart';
-import 'package:animation_2/models/ProductItem.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/price.dart';
 import '../../../constants.dart';
+import '../../../models/ProductItem.dart';
 
 class CartDetailsViewCard extends StatelessWidget {
   const CartDetailsViewCard({
-    Key? key,
+    super.key,
     required this.productItem,
-  }) : super(key: key);
+  });
 
   final ProductItem productItem;
 
@@ -25,18 +25,18 @@ class CartDetailsViewCard extends StatelessWidget {
         productItem.product!.title!,
         style: Theme.of(context)
             .textTheme
-            .subtitle1!
+            .titleMedium!
             .copyWith(fontWeight: FontWeight.bold),
       ),
       trailing: FittedBox(
         child: Row(
           children: [
-            Price(amount: "20"),
+            const Price(amount: "20"),
             Text(
               "  x ${productItem.quantity}",
               style: Theme.of(context)
                   .textTheme
-                  .subtitle1!
+                  .titleMedium!
                   .copyWith(fontWeight: FontWeight.bold),
             )
           ],
