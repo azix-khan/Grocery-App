@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         child: Container(
-          color: Color(0xFFEAEAEA),
+          color: const Color(0xFFEAEAEA),
           child: AnimatedBuilder(
               animation: controller,
               builder: (context, _) {
@@ -54,9 +54,9 @@ class HomeScreen extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: defaultPadding),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Colors.white,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft:
                                     Radius.circular(defaultPadding * 1.5),
                                 bottomRight:
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                             child: GridView.builder(
                               itemCount: demo_products.length,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 childAspectRatio: 0.75,
                                 mainAxisSpacing: defaultPadding,
@@ -114,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                             onVerticalDragUpdate: _onVerticalGesture,
                             child: Container(
                               padding: const EdgeInsets.all(defaultPadding),
-                              color: Color(0xFFEAEAEA),
+                              color: const Color(0xFFEAEAEA),
                               alignment: Alignment.topLeft,
                               child: AnimatedSwitcher(
                                 duration: panelTransition,
@@ -134,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                           right: 0,
                           left: 0,
                           height: headerHeight,
-                          child: HomeHeader(),
+                          child: const HomeHeader(),
                         ),
                       ],
                     );
