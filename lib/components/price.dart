@@ -4,9 +4,9 @@ import '../constants.dart';
 
 class Price extends StatelessWidget {
   const Price({
-    Key? key,
+    super.key,
     required this.amount,
-  }) : super(key: key);
+  });
   final String amount;
 
   @override
@@ -16,14 +16,14 @@ class Price extends StatelessWidget {
         text: "\$",
         style: Theme.of(context)
             .textTheme
-            .subtitle1!
+            .titleMedium!
             .copyWith(fontWeight: FontWeight.w600, color: primaryColor),
         children: [
           TextSpan(
             text: amount,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
-          TextSpan(
+          const TextSpan(
             text: "/kg",
             style:
                 TextStyle(color: Colors.black26, fontWeight: FontWeight.normal),

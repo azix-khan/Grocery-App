@@ -1,6 +1,7 @@
-import 'package:animation_2/models/Product.dart';
-import 'package:animation_2/models/ProductItem.dart';
 import 'package:flutter/material.dart';
+
+import '../models/Product.dart';
+import '../models/ProductItem.dart';
 
 enum HomeState { normal, cart }
 
