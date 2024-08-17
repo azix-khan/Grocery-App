@@ -4,8 +4,8 @@ import '../../../constants.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +21,18 @@ class HomeHeader extends StatelessWidget {
             children: [
               Text(
                 "Good Morning!",
-                style: Theme.of(context).textTheme.caption,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               Text(
                 "Caesar Rincon",
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1!
+                    .titleMedium!
                     .copyWith(color: Colors.black54),
               )
             ],
           ),
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: Colors.transparent,
             backgroundImage: AssetImage("assets/images/profile.png"),
           )
