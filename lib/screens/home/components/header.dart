@@ -24,7 +24,7 @@ class HomeHeader extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               Text(
-                "Caesar Rincon",
+                "Aziz Ur Rahman",
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!

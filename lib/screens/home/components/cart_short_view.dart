@@ -29,7 +29,7 @@ class CardShortView extends StatelessWidget {
                 (index) => Padding(
                   padding: const EdgeInsets.only(right: defaultPadding / 2),
                   child: Hero(
-                    tag: controller.cart[index].product!.title! + "_cartTag",
+                    tag: "${controller.cart[index].product!.title!}_cartTag",
                     child: CircleAvatar(
                       backgroundColor: Colors.white,
                       backgroundImage:
