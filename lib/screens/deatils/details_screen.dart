@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../../components/fav_btn.dart';
+import '../../components/price.dart';
+import '../../constants.dart';
+import '../../models/Product.dart';
 import 'components/cart_counter.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen(
-      {Key? key, required this.product, required this.onProductAdd})
-      : super(key: key);
+      {super.key, required this.product, required this.onProductAdd});
 
   final Product product;
   final VoidCallback onProductAdd;
 
   @override
-  _DetailsScreenState createState() => _DetailsScreenState();
+  DetailsScreenState createState() => DetailsScreenState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class DetailsScreenState extends State<DetailsScreen> {
   String _cartTag = "";
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 });
                 Navigator.pop(context);
               },
-              child: Text("Add to Cart"),
+              child: const Text("Add to Cart"),
             ),
           ),
         ),
@@ -49,20 +52,20 @@ class _DetailsScreenState extends State<DetailsScreen> {
               children: [
                 Container(
                   width: double.infinity,
-                  color: Color(0xFFF8F8F8),
+                  color: const Color(0xFFF8F8F8),
                   child: Hero(
                     tag: widget.product.title! + _cartTag,
                     child: Image.asset(widget.product.image!),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   bottom: -20,
                   child: CartCounter(),
                 )
               ],
             ),
           ),
-          SizedBox(height: defaultPadding * 1.5),
+          const SizedBox(height: defaultPadding * 1.5),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Row(
@@ -72,16 +75,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     widget.product.title!,
                     style: Theme.of(context)
                         .textTheme
-                        .headline6!
+                        .titleLarge!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Price(amount: "20.00"),
+                const Price(amount: "20.00"),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(defaultPadding),
+          const Padding(
+            padding: EdgeInsets.all(defaultPadding),
             child: Text(
               "Cabbage (comprising several cultivars of Brassica oleracea) is a leafy green, red (purple), or white (pale green) biennial plant grown as an annual vegetable crop for its dense-leaved heads. It is descended from the wild cabbage (B. oleracea var. oleracea), and belongs to the cole crops or brassicas, meaning it is closely related to broccoli and cauliflower (var. botrytis); Brussels sprouts (var. gemmifera); and Savoy cabbage (var. sabauda).",
               style: TextStyle(
@@ -97,17 +100,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
-      leading: BackButton(
+      leading: const BackButton(
         color: Colors.black,
       ),
-      backgroundColor: Color(0xFFF8F8F8),
+      backgroundColor: const Color(0xFFF8F8F8),
       elevation: 0,
       centerTitle: true,
-      title: Text(
+      title: const Text(
         "Fruits",
         style: TextStyle(color: Colors.black),
       ),
-      actions: [
+      actions: const [
         FavBtn(radius: 20),
         SizedBox(width: defaultPadding),
       ],
