@@ -1,6 +1,6 @@
 # grocery_app
 
-Grocery App with Custom Animations
+Grocery App with Custom Animations.
 
 ## Getting Started
 
